@@ -1,12 +1,19 @@
+<ion-menu [disabled]="!menuService.getState('tab2-menu')" menuId="tab2-menu" contentId="tab2-content">
+  Tab2 Menu
+</ion-menu>
+
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons>
+      <ion-menu-button menu="tab2-menu"></ion-menu-button>
+    </ion-buttons>
     <ion-title>
       Tab 2
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" id="tab2-content">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Tab 2</ion-title>

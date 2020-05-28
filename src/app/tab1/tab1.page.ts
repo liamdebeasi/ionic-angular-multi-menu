@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuService } from '../menu.service';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  constructor(public menuService: MenuService) {}
+  
+  ionViewWillEnter() {
+    this.menuService.enable('tab1-menu');
+    this.menuService.disable('tab2-menu');
+    this.menuService.disable('tab3-menu');
+  }
 
 }
